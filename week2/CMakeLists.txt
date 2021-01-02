@@ -6,5 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 add_executable(01_Factorial
         01_Factorial.cpp)
 
-#add_executable(main
-#        main.c)
+add_executable(02_Palindrome
+        02_Palindrome.cpp)
+
+add_executable(03_PalindromFilter
+        03_PalindromFilter.cpp)
