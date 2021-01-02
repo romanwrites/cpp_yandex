@@ -11,3 +11,15 @@ add_executable(02_Palindrome
 
 add_executable(03_PalindromFilter
         03_PalindromFilter.cpp)
+
+add_executable(04_UpdateIfGreater
+        04_UpdateIfGreater.cpp)
+
+add_executable(05_MoveStrings
+        05_MoveStrings.cpp)
+
+add_executable(06_Reverse
+        06_Reverse.cpp)
+
+add_executable(07_Reversed
+        07_Reversed.cpp)
