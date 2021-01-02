@@ -23,3 +23,6 @@ add_executable(06_Reverse
 
 add_executable(07_Reversed
         07_Reversed.cpp)
+
+add_executable(08_AverageTemperature
+        08_AverageTemperature.cpp)
