@@ -26,3 +26,6 @@ add_executable(07_Reversed
 
 add_executable(08_AverageTemperature
         08_AverageTemperature.cpp)
+
+add_executable(09_Queue
+        09_Queue.cpp)
