@@ -29,3 +29,6 @@ add_executable(08_AverageTemperature
 
 add_executable(09_Queue
         09_Queue.cpp)
+
+add_executable(10_MonthlyTasks
+        10_Concerns.cpp)
