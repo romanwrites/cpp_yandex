@@ -35,3 +35,6 @@ add_executable(10_MonthlyTasks
 
 add_executable(11_IsAnagram
         11_IsAnagram.cpp)
+
+add_executable(12_Capitals
+        12_Capitals.cpp)
