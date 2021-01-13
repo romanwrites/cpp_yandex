@@ -12,5 +12,16 @@ add_executable(static
 add_executable(main
         main.cpp)
 
+add_executable(mainc
+        cs50.c
+        main.c)
+
 add_executable(palindrome
         palindrome.cpp)
+
+add_executable(exceptions
+        exceptions.cpp)
+
+
+add_executable(mapTests
+        mapTests.cpp)
