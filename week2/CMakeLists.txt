@@ -32,3 +32,6 @@ add_executable(09_Queue
 
 add_executable(10_MonthlyTasks
         10_Concerns.cpp)
+
+add_executable(11_IsAnagram
+        11_IsAnagram.cpp)
