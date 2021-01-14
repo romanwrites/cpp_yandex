@@ -50,3 +50,6 @@ add_executable(15_Unique
 
 add_executable(16_BuildMapValuesSet
         16_BuildMapValuesSet.cpp)
+
+add_executable(17_Synonyms
+        17_Synonyms.cpp)
