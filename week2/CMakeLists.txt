@@ -41,3 +41,6 @@ add_executable(12_Capitals
 
 add_executable(13_BusStops
         13_Buses1.cpp)
+
+add_executable(14_Buses2
+        14_Buses2.cpp)
