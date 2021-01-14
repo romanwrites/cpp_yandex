@@ -21,9 +21,9 @@ int 	main() {
 		if (m.find(stops) != m.end()) {
 			cout << "Already exists for " << m[stops] << endl;
 		} else {
-			int size = m.size();
-			m[stops] = size + 1;
-			cout << "New bus " << size + 1 << endl;
+			const uint32_t size = m.size() + 1;
+			m[stops] = size;
+			cout << "New bus " << size << endl;
 		}
 	}
 	return 0;
