@@ -44,3 +44,9 @@ add_executable(13_BusStops
 
 add_executable(14_Buses2
         14_Buses2.cpp)
+
+add_executable(15_Unique
+        15_Unique.cpp)
+
+add_executable(16_BuildMapValuesSet
+        16_BuildMapValuesSet.cpp)
