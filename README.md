@@ -1,4 +1,18 @@
-# C++ Yandex Coursera
+# C++ Yandex Coursera: 🥋 White belt
+
+# Table of contents:
+<details>
+  <summary>Click to expand</summary>
+  
+1. [Operations, conditional operator, loops](https://github.com/kukinpower/cpp_yandex#01-operations-conditional-operator-loops)
+    1. [Operations](https://github.com/kukinpower/cpp_yandex#operations)
+    2. [Conditional operator and loops](https://github.com/kukinpower/cpp_yandex#operations)
+2. [Functions, containers: vector, map, set](https://github.com/kukinpower/cpp_yandex#02-module-functions-containers-vector-map-set)
+	1. [Functions](https://github.com/kukinpower/cpp_yandex#functions)
+	2. [Vector](https://github.com/kukinpower/cpp_yandex#vector)
+	3. [Map](https://github.com/kukinpower/cpp_yandex#map)
+	4. [Set](https://github.com/kukinpower/cpp_yandex#set)
+</details>
 
 ## 01 Operations, conditional operator, loops
 
