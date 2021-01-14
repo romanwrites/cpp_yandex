@@ -38,3 +38,6 @@ add_executable(11_IsAnagram
 
 add_executable(12_Capitals
         12_Capitals.cpp)
+
+add_executable(13_BusStops
+        13_Buses1.cpp)
