@@ -11,14 +11,6 @@ void Print(T const &c) {
 	}
 }
 
-string Tolower(string const &s) {
-	string str = s;
-	for (int i = 0; i < s.length(); i++) {
-		str[i] = tolower(s[i]);
-	}
-	return str;
-}
-
 int main() {
 	int n;
 	cin >> n;
@@ -27,7 +19,12 @@ int main() {
 		cin >> i;
 	}
 	sort(v.begin(), v.end(), [](string const &a, string const &b) {
-		return (Tolower(a) < Tolower(b));
+		return lexicographical_compare(
+				a.begin(), a.end(),
+				b.begin(), b.end(),
+				[](char ac, char ab) {
+					return (tolower(ac) < tolower(ab));
+		});
 	});
 	Print(v);
 	return 0;
