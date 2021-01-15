@@ -9,4 +9,5 @@ add_executable(01_SortAbs
 add_executable(02_SortCaseInsensitively
         02_SortCaseInsensitively.cpp)
 
-
+add_executable(03_SortedStrings
+        03_SortedStrings.cpp)
