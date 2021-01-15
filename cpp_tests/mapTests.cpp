@@ -11,6 +11,17 @@ void 	printMap(const T &m) {
 	}
 }
 
+template<typename T>
+void 	printMapV(const T &m) {
+	for (const auto& it : m) {
+		cout << it.first << ": ";
+		for (const auto &i : it.second) {
+			cout << i << " ";
+		}
+		cout << endl;
+	}
+}
+
 int 	main() {
 	cout << "----------- Test <string, string> map -----------" << endl;
 	map<string, string>	langs;
@@ -35,12 +46,23 @@ int 	main() {
 	vector<string> v = {"one", "one", "two", "three", "four", "two", "one"};
 	map<string, int> counters;
 	for (const auto &it : v) {
-		if (counters.count(it) == 0) { // count returns how many times the key is found in the map
-			counters[it] = 1;
-		} else {
+		// redundant
+//		if (counters.count(it) == 0) { // count returns how many times the key is found in the map
+//			counters[it] = 1;
+//		} else {
 			counters[it]++;
-		}
+//		}
 	}
 	printMap(counters);
+
+	cout << endl << "----------- Count quantity of values at vector with map by char key -----------" << endl;
+	map<char, vector<string>>	groupedWords;
+	for (const string &word : v) {
+		if (find(groupedWords[word[0]].begin(), groupedWords[word[0]].end(), word) == groupedWords[word[0]].end())
+			groupedWords[word[0]].push_back(word);
+	}
+
+	printMapV(groupedWords);
+
 	return 0;
 }
