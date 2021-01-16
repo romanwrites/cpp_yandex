@@ -27,3 +27,6 @@ add_executable(06_ReversibleString
 
 add_executable(07_Names3
         07_Names3.cpp)
+
+add_executable(08_Incognizable
+        08_Incognizable.cpp)
