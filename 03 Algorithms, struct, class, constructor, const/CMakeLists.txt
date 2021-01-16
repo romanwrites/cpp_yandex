@@ -21,3 +21,6 @@ add_executable(04_Names1
 
 add_executable(05_Names2
         05_Names2.cpp)
+
+add_executable(06_ReversibleString
+        06_ReversibleString.cpp)
