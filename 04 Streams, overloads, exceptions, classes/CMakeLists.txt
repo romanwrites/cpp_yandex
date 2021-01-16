@@ -5,3 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(01_EnsureEqual
         01_EnsureEqual.cpp)
+
+add_executable(01_LectureTitle
+        01_LectureTitle.cpp)
