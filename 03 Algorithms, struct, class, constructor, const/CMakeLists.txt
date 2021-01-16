@@ -11,3 +11,6 @@ add_executable(02_SortCaseInsensitively
 
 add_executable(03_SortedStrings
         03_SortedStrings.cpp)
+
+add_executable(04_Names1
+        04_Names1.cpp)
