@@ -23,3 +23,6 @@ add_executable(05_WriteToFile
 
 add_executable(06_Precision
         06_Precision.cpp)
+
+add_executable(07_Table
+        07_Table.cpp)
