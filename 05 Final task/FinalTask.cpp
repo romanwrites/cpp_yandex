@@ -64,31 +64,42 @@ private:
 
 };
 
+Date ParseDate(string const &date) {
+	istringstream input(date);
+	int year;
+	char dash1, dash2;
+	int month;
+	int day;
+	input >> year >> dash1 >> month >> dash2 >> day;
+	if (input.fail() || (dash1 != '-' || dash2 != '-'))
+		throw BadArgumentException("Wrong date format: " + date);
+	return Date(year, month, day);
+}
+
 int main() {
   Database db;
 
   string command;
-  while (getline(cin, command)) {
-  	try {
-		istringstream input(command);
-		if (input) {
-			string cmd;
-			input >> cmd;
-			if (cmd == "Add") {
-				try {
-					string date, event;
-					input >> date >> event;
-				} catch (exception &ex) {
-					cout << ex.what() << endl;
-				}
-			} else {
-				throw BadArgumentException("Unknown command: " + cmd);
-			}
-		}
-  	} catch (BadArgumentException &ex) {
-		cout << ex.what() << endl;
-	}
+  try {
+	  while (getline(cin, command)) {
+		  istringstream input(command);
+		  if (input) {
+			  string cmd;
+			  input >> cmd;
+			  if (cmd == "Add") {
+				  string date, event;
+				  input >> date >> event;
+				  Date d = ParseDate(date);
+				  cout << d.GetYear() << "-" << d.GetMonth() << "-" << d.GetDay() << endl;
+			  }
+			  else {
+				  throw BadArgumentException("Unknown command: " + cmd);
+			  }
+		  }
+	  }
+  } catch (BadArgumentException &ex) {
+	  cout << ex.what() << endl;
+	  return 1;
   }
-
   return 0;
 }
