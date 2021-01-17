@@ -14,3 +14,12 @@ add_executable(02_InvertibleFunction
 
 add_executable(03_InvertibleFunctionWithMult
         03_InvertibleFunctionWithMult.cpp)
+
+add_executable(04_ReadFile
+        04_ReadFile.cpp)
+
+add_executable(05_WriteToFile
+        05_WriteToFile.cpp)
+
+add_executable(06_Precision
+        06_Precision.cpp)
