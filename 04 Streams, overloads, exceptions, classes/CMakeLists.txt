@@ -47,3 +47,6 @@ add_executable(01_EnsureEqual
 
 add_executable(11_Rational_throw
         11_Rational_throw.cpp)
+
+add_executable(12_Rational_calc
+        12_Rational_calc.cpp)
