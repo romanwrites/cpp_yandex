@@ -44,3 +44,6 @@ add_executable(09_5_Rational_map
 
 add_executable(01_EnsureEqual
         10_EnsureEqual.cpp)
+
+add_executable(11_Rational_throw
+        11_Rational_throw.cpp)
