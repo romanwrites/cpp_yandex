@@ -3,9 +3,6 @@ project(CPP_Yandex_week1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(01_EnsureEqual
-        01_EnsureEqual.cpp)
-
 add_executable(01_LectureTitle
         01_LectureTitle.cpp)
 
@@ -44,3 +41,6 @@ add_executable(09_4_Rational_io
 
 add_executable(09_5_Rational_map
         09_5_Rational_map.cpp)
+
+add_executable(01_EnsureEqual
+        10_EnsureEqual.cpp)
