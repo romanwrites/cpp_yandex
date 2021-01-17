@@ -8,3 +8,6 @@ add_executable(01_EnsureEqual
 
 add_executable(01_LectureTitle
         01_LectureTitle.cpp)
+
+add_executable(02_InvertibleFunction
+        02_InvertibleFunction.cpp)
