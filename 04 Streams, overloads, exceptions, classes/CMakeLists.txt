@@ -11,3 +11,6 @@ add_executable(01_LectureTitle
 
 add_executable(02_InvertibleFunction
         02_InvertibleFunction.cpp)
+
+add_executable(03_InvertibleFunctionWithMult
+        03_InvertibleFunctionWithMult.cpp)
