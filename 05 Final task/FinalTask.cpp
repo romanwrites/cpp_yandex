@@ -47,7 +47,10 @@ private:
 	}
 };
 
-bool operator<(const Date& lhs, const Date& rhs);
+bool operator<(const Date& lhs, const Date& rhs) {
+	return lhs.GetYear() * 365 + lhs.GetMonth() * 31 + lhs.GetDay() <
+			rhs.GetYear() * 365 + rhs.GetMonth() * 31 + rhs.GetDay();
+}
 
 class Database {
 public:
