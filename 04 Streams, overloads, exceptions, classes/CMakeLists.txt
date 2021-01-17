@@ -26,3 +26,6 @@ add_executable(06_Precision
 
 add_executable(07_Table
         07_Table.cpp)
+
+add_executable(08_StudentsList
+        08_StudentsList.cpp)
