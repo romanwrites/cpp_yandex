@@ -9,7 +9,6 @@ int main() {
 	int n, m;
 	if (input) {
 		input >> n >> m;
-//		cout << left;
 		while (n > 0) {
 			n--;
 			int j = m;
