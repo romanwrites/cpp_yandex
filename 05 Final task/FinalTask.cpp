@@ -80,7 +80,8 @@ public:
 
 	void Find(const Date& date) const {
 		auto it = m.find(date);
-		PrintSet(it->second);
+		if (it != m.end())
+			PrintSet(it->second);
 	}
 
 	void	PrintSet(set<string> const &s) const {
