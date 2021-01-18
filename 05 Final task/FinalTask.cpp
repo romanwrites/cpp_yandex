@@ -95,28 +95,15 @@ public:
 		}
 	}
 
-	void	PrintSetInLine(set<string> const &s) const {
-		auto it = s.begin();
-		for (int i = 0; i < s.size(); i++) {
-			if (i + 1 == s.size())
-				cout << *it;
-			else
-				cout << *it << " ";
-			it++;
-		}
-	}
-
-	void	PrintDate(Date const &d) const {
-		cout << setfill('0') << setw(4) << d.GetYear() << '-'
-		<< setw(2) << d.GetMonth() << '-' << setw(2) << d.GetDay();
-	}
-
 	void Print() const {
 		for (auto const &i : m) {
-			PrintDate(i.first);
-			cout << " ";
-			PrintSetInLine(i.second);
-			cout << endl;
+			stringstream ss;
+			ss << setfill('0') << setw(4) << i.first.GetYear() << '-'
+				 << setw(2) << i.first.GetMonth() << '-' << setw(2) << i.first.GetDay();
+			string date = ss.str();
+			for (auto const &s: i.second) {
+				cout << date << " " << s << endl;
+			}
 		}
 	}
 
