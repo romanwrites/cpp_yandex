@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 #include <map>
 #include <set>
 #include <sstream>
@@ -90,6 +89,12 @@ public:
 		}
 	}
 
+	void	PrintSetInLine(set<string> const &s) const {
+		for (auto const &i : s) {
+			cout << i << " ";
+		}
+	}
+
 	void	PrintDate(Date const &d) const {
 		cout << setfill('0') << setw(4) << d.GetYear() << '-'
 		<< setw(2) << d.GetMonth() << '-' << setw(2) << d.GetDay();
@@ -99,7 +104,7 @@ public:
 		for (auto const &i : m) {
 			PrintDate(i.first);
 			cout << " ";
-			PrintSet(i.second);
+			PrintSetInLine(i.second);
 			cout << endl;
 		}
 	}
@@ -134,13 +139,11 @@ int main() {
 			  if (cmd == "Add") {
 				  string date, event;
 				  input >> date >> event;
-//				  Date d = ParseDate(date);
 				  db.AddEvent(ParseDate(date), event);
-//				  cout << d.GetYear() << "-" << d.GetMonth() << "-" << d.GetDay() << endl;
 			  } else if (cmd == "Del") {
 				  string date;
 				  input >> date;
-				  if (input) {
+				  if (!input.eof()) {
 				  	string event;
 				  	input >> event;
 					if (db.DeleteEvent(ParseDate(date), event)) {
@@ -157,8 +160,9 @@ int main() {
 			  	db.Find(ParseDate(date));
 			  } else if (cmd == "Print") {
 			  	db.Print();
-			  }
-			  else {
+			  } else if (cmd.empty()) {
+			  	continue ;
+			  } else {
 				  throw BadArgumentException("Unknown command: " + cmd);
 			  }
 		  }
