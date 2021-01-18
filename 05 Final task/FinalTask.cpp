@@ -90,8 +90,13 @@ public:
 	}
 
 	void	PrintSetInLine(set<string> const &s) const {
-		for (auto const &i : s) {
-			cout << i << " ";
+		auto it = s.begin();
+		for (int i = 0; i < s.size(); i++) {
+			if (i + 1 == s.size())
+				cout << *it;
+			else
+				cout << *it << " ";
+			it++;
 		}
 	}
 
