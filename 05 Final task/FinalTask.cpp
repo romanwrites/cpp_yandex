@@ -49,8 +49,8 @@ private:
 };
 
 bool operator<(const Date& lhs, const Date& rhs) {
-	return lhs.GetYear() * 365 + lhs.GetMonth() * 31 + lhs.GetDay() <
-			rhs.GetYear() * 365 + rhs.GetMonth() * 31 + rhs.GetDay();
+	return lhs.GetYear() * 372 + lhs.GetMonth() * 31 + lhs.GetDay() <
+			rhs.GetYear() * 372 + rhs.GetMonth() * 31 + rhs.GetDay();
 }
 
 class Database {
@@ -126,55 +126,57 @@ Date ParseDate(string const &date) {
 	int month;
 	int day;
 	input >> year >> dash1 >> month >> dash2 >> day;
-	if (input.fail() || (dash1 != '-' || dash2 != '-'))
+	if (input.fail() || !input.eof() || (dash1 != '-' || dash2 != '-'))
 		throw BadArgumentException("Wrong date format: " + date);
 	return Date(year, month, day);
 }
 
 int main() {
-  Database db;
+	Database db;
 
-  string command;
-  try {
-	  while (getline(cin, command)) {
-		  istringstream input(command);
-		  if (input) {
-			  string cmd;
-			  input >> cmd;
-			  if (cmd == "Add") {
-				  string date, event;
-				  input >> date >> event;
-				  db.AddEvent(ParseDate(date), event);
-			  } else if (cmd == "Del") {
-				  string date;
-				  input >> date;
-				  if (!input.eof()) {
-				  	string event;
-				  	input >> event;
-					if (db.DeleteEvent(ParseDate(date), event)) {
-					  cout << "Deleted successfully" << endl;
-					} else {
-					  cout << "Event not found" << endl;
-					}
-				  } else {
-					  cout << "Deleted " << db.DeleteDate(ParseDate(date)) << " events" << endl;
-				  }
-			  } else if (cmd == "Find") {
-			  	string date;
-			  	input >> date;
-			  	db.Find(ParseDate(date));
-			  } else if (cmd == "Print") {
-			  	db.Print();
-			  } else if (cmd.empty()) {
-			  	continue ;
-			  } else {
-				  throw BadArgumentException("Unknown command: " + cmd);
-			  }
-		  }
-	  }
-  } catch (BadArgumentException &ex) {
-	  cout << ex.what() << endl;
-	  return 1;
-  }
-  return 0;
+  	string command;
+  	try {
+  		while (getline(cin, command)) {
+  			istringstream input(command);
+		  	if (input) {
+		  		string cmd;
+		  		input >> cmd;
+		  		if (cmd == "Add") {
+		  			string date, event;
+		  			input >> date >> event;
+		  			db.AddEvent(ParseDate(date), event);
+		  		} else if (cmd == "Del") {
+		  			string date;
+		  			input >> date;
+		  			if (!input.eof()) {
+		  				string event;
+		  				input >> event;
+		  				if (db.DeleteEvent(ParseDate(date), event)) {
+		  					cout << "Deleted successfully" << endl;
+		  				} else {
+		  					cout << "Event not found" << endl;
+		  				}
+		  			} else {
+		  				int n = db.DeleteDate(ParseDate(date));
+		  				cout << "Deleted " << n << " events" << endl;
+		  			}
+		  		} else if (cmd == "Find") {
+		  			string date;
+					input >> date;
+					db.Find(ParseDate(date));
+		  		} else if (cmd == "Print") {
+		  			db.Print();
+		  		} else if (cmd.empty()) {
+		  			continue ;
+		  		} else {
+		  			throw BadArgumentException("Unknown command: " + cmd);
+		  		}
+		  	}
+  		}
+  	} catch (BadArgumentException &ex) {
+  		cout << ex.what() << endl;
+  		return 1;
+  	}
+
+  	return 0;
 }
