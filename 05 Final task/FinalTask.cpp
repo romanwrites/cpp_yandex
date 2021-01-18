@@ -73,8 +73,13 @@ public:
 
 	int  DeleteDate(const Date& date) {
 		auto it = m.find(date);
-		int n = it->second.size();
-		m.erase(it);
+		int n;
+		if (it != m.end()) {
+			n = it->second.size();
+			m.erase(it);
+		} else {
+			n = 0;
+		}
 		return n;
 	}
 
