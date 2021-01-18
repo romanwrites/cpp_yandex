@@ -2,7 +2,9 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <set>
 #include <sstream>
+#include <iomanip>
 using namespace std;
 
 class BadArgumentException : exception {
@@ -54,16 +56,56 @@ bool operator<(const Date& lhs, const Date& rhs) {
 
 class Database {
 public:
-	void AddEvent(const Date& date, const string& event);
-	bool DeleteEvent(const Date& date, const string& event);
-	int  DeleteDate(const Date& date);
+	void AddEvent(const Date& date, const string& event) {
+		m[date].insert(event);
+	}
 
-	/* ??? */ Find(const Date& date) const;
+	bool DeleteEvent(const Date& date, const string& event) {
+		auto it = m.find(date);
+		if (it != m.end()) {
+			auto itSet = it->second.find(event);
+			if (itSet != it->second.end()) {
+				it->second.erase(event);
+				return true;
+			}
+		}
+		return false;
+	}
 
-	void Print() const;
+	int  DeleteDate(const Date& date) {
+		auto it = m.find(date);
+		int n = it->second.size();
+		m.erase(it);
+		return n;
+	}
+
+	void Find(const Date& date) const {
+		auto it = m.find(date);
+		PrintSet(it->second);
+	}
+
+	void	PrintSet(set<string> const &s) const {
+		for (auto const &i : s) {
+			cout << i << endl;
+		}
+	}
+
+	void	PrintDate(Date const &d) const {
+		cout << setfill('0') << setw(4) << d.GetYear() << '-'
+		<< setw(2) << d.GetMonth() << '-' << setw(2) << d.GetDay();
+	}
+
+	void Print() const {
+		for (auto const &i : m) {
+			PrintDate(i.first);
+			cout << " ";
+			PrintSet(i.second);
+			cout << endl;
+		}
+	}
 
 private:
-	map<Date, string> m;
+	map<Date, set<string> > m;
 
 };
 
@@ -92,8 +134,29 @@ int main() {
 			  if (cmd == "Add") {
 				  string date, event;
 				  input >> date >> event;
-				  Date d = ParseDate(date);
-				  cout << d.GetYear() << "-" << d.GetMonth() << "-" << d.GetDay() << endl;
+//				  Date d = ParseDate(date);
+				  db.AddEvent(ParseDate(date), event);
+//				  cout << d.GetYear() << "-" << d.GetMonth() << "-" << d.GetDay() << endl;
+			  } else if (cmd == "Del") {
+				  string date;
+				  input >> date;
+				  if (input) {
+				  	string event;
+				  	input >> event;
+					if (db.DeleteEvent(ParseDate(date), event)) {
+					  cout << "Deleted successfully" << endl;
+					} else {
+					  cout << "Event not found" << endl;
+					}
+				  } else {
+					  cout << "Deleted " << db.DeleteDate(ParseDate(date)) << " events" << endl;
+				  }
+			  } else if (cmd == "Find") {
+			  	string date;
+			  	input >> date;
+			  	db.Find(ParseDate(date));
+			  } else if (cmd == "Print") {
+			  	db.Print();
 			  }
 			  else {
 				  throw BadArgumentException("Unknown command: " + cmd);
