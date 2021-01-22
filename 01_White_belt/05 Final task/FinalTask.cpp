@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include <set>
+#include <vector>
 #include <sstream>
 #include <iomanip>
 using namespace std;
@@ -49,8 +50,8 @@ private:
 };
 
 bool operator<(const Date& lhs, const Date& rhs) {
-	return lhs.GetYear() * 372 + lhs.GetMonth() * 31 + lhs.GetDay() <
-			rhs.GetYear() * 372 + rhs.GetMonth() * 31 + rhs.GetDay();
+    return vector<int>{lhs.GetYear(), lhs.GetMonth(), lhs.GetDay()} <
+            vector<int>{rhs.GetYear(), rhs.GetMonth(), rhs.GetDay()};
 }
 
 class Database {
