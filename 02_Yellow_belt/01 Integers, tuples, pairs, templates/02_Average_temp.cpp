@@ -13,15 +13,14 @@ int main() {
         sum += i;
     }
     int average = sum / n;
-    int count = 0;
-    for (auto const &i : v) {
-        if (i > average)
-            count++;
-    }
-    cout << count << endl;
+    vector<int> aboveAverage;
     for (int i = 0; i < static_cast<int>(v.size()); i++) {
         if (v[i] > average)
-            cout << i << " ";
+            aboveAverage.push_back(i);
+    }
+    cout << aboveAverage.size() << endl;
+    for (auto const &i : aboveAverage) {
+        cout << i << " ";
     }
 
     return 0;
