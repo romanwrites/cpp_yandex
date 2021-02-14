@@ -29,3 +29,6 @@ add_executable(08_Decompose_buses
 
 add_executable(09_GetDistinctRealRootCount
         09_Test_GetDistinctRealRootCount.cpp)
+
+add_executable(10_Test_Person
+        10_Test_Person.cpp)
