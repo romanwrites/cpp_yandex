@@ -17,3 +17,6 @@ add_executable(04_Regions_find_max
 
 add_executable(05_Team_tasks
         05_Team_tasks.cpp)
+
+add_executable(06_Sqr
+        06_Sqr.cpp)
