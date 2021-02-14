@@ -26,3 +26,6 @@ add_executable(07_GetRefStrict
 
 add_executable(08_Decompose_buses
         08_Decompose_buses.cpp)
+
+add_executable(09_GetDistinctRealRootCount
+        09_Test_GetDistinctRealRootCount.cpp)
