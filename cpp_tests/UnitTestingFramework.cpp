@@ -55,14 +55,31 @@ ostream &operator << (ostream &os, set<T> const &s) {
     return os << "}";
 }
 
-template <class TestFunc>
-void RunTest(TestFunc func, string const &test_name) {
-    try {
-        func();
-    } catch (runtime_error &ex) {
-        cout << test_name << " fail: " << ex.what() << endl;
+class TestRunner {
+public:
+    template <class TestFunc>
+    void RunTest(TestFunc func, string const &test_name) {
+        try {
+            func();
+            // Use cerr to not mix tests output and program output
+            cerr << test_name << ": "
+                 << SPRING_GREEN_SET << "OK" << RESET << endl;
+        } catch (runtime_error &ex) {
+            ++fail_count;
+            cerr << test_name << " fail: " << ex.what() << endl;
+        }
     }
-}
+
+    ~TestRunner() {
+        if (fail_count > 0) {
+            cerr << fail_count << " tests failed. Terminate" << endl;
+            exit(1);
+        }
+    }
+
+private:
+    int fail_count = 0;
+};
 
 template<typename T>
 T   sum(T a, T b) {
@@ -73,14 +90,18 @@ void TestSum() {
     AssertEqual(sum(0, 0), 0, "Test 0 + 0");
     AssertEqual(sum(0, 1), 1, "Test 0 + 1");
     AssertEqual(sum(0, -1), -1, "Test 0 + -1");
-    AssertEqual(sum(3, 2), 4, "Test 3 + 2");
+    AssertEqual(sum(3, 2), 5, "Test 3 + 2");
     AssertEqual(sum(3, -2), 1, "Test 3 + -2");
     AssertEqual(sum(-5, -4), -9, "Test -5 + -4");
-    cout << "TestSum: "
-    << SPRING_GREEN_SET << "OK" << RESET << endl;
+}
+
+void TestAll() {
+    TestRunner tr;
+    tr.RunTest(TestSum, "TestSum");
 }
 
 int main() {
-    RunTest(TestSum, "TestSum");
+    TestAll();
+
     return 0;
 }
