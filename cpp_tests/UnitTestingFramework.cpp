@@ -19,6 +19,7 @@ void AssertEqual(T const &t, U const &u, string const &hint) {
     if (t != u) {
         ostringstream os;
         os << "Assertion failed: " << RED_SET << t << " != " << u
+        << RESET << ". "
         << PINK_SET << hint << RESET;
         throw runtime_error(os.str());
     }
@@ -72,7 +73,7 @@ void TestSum() {
     AssertEqual(sum(0, 0), 0, "Test 0 + 0");
     AssertEqual(sum(0, 1), 1, "Test 0 + 1");
     AssertEqual(sum(0, -1), -1, "Test 0 + -1");
-    AssertEqual(sum(3, 2), 5, "Test 3 + 2");
+    AssertEqual(sum(3, 2), 4, "Test 3 + 2");
     AssertEqual(sum(3, -2), 1, "Test 3 + -2");
     AssertEqual(sum(-5, -4), -9, "Test -5 + -4");
     cout << "TestSum: "
