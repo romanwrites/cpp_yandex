@@ -32,3 +32,6 @@ add_executable(09_GetDistinctRealRootCount
 
 add_executable(10_Test_Person
         10_Test_Person.cpp)
+
+add_executable(11_Test_Rational
+        11_Test_Rational.cpp)
