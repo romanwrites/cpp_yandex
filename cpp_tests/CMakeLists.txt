@@ -17,3 +17,6 @@ add_executable(mapTests
 
 add_executable(queens
         queens.cpp)
+
+add_executable(UnitTestingFramework
+        UnitTestingFramework.cpp)
