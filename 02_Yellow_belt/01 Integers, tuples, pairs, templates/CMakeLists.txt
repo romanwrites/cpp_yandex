@@ -20,3 +20,6 @@ add_executable(05_Team_tasks
 
 add_executable(06_Sqr
         06_Sqr.cpp)
+
+add_executable(07_GetRefStrict
+        07_GetRefStrict.cpp)
