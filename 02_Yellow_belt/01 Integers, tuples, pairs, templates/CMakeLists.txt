@@ -35,3 +35,6 @@ add_executable(10_Test_Person
 
 add_executable(11_Test_Rational
         11_Test_Rational.cpp)
+
+add_executable(12_Test_IsPalindrom
+        12_Test_IsPalindrom.cpp)
