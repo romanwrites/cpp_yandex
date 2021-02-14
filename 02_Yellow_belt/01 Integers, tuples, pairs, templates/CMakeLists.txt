@@ -23,3 +23,6 @@ add_executable(06_Sqr
 
 add_executable(07_GetRefStrict
         07_GetRefStrict.cpp)
+
+add_executable(08_Decompose_buses
+        08_Decompose_buses.cpp)
