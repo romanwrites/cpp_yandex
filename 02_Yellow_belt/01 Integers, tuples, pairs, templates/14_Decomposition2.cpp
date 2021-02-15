@@ -2,35 +2,23 @@
 #include <string>
 #include <stdexcept>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
 PhoneNumber::PhoneNumber(const string &international_number) {
-    if (international_number[0] != '+') {
+    istringstream iss(international_number);
+
+    char c;
+    iss >> c;
+    if (c != '+') {
         throw invalid_argument("No plus in front: " + international_number);
     }
-    int i = 1;
-    while (i < international_number.size() && international_number[i] != '-') {
-        country_code_ += international_number[i];
-        i++;
-    }
-    if (country_code_.empty() || international_number.size() == country_code_.size() + 1) {
-        throw invalid_argument("Bad argument: " + international_number);
-    }
-    i++;
-    while (i < international_number.size() && international_number[i] != '-') {
-        city_code_ += international_number[i];
-        i++;
-    }
-    if (city_code_.empty( )|| international_number.size() == city_code_.size() + country_code_.size() + 1) {
-        throw invalid_argument("Bad argument: " + international_number);
-    }
-    i++;
-    while (i < international_number.size()) {
-        local_number_ += international_number[i];
-        i++;
-    }
-    if (local_number_.empty()) {
+    getline(iss, country_code_, '-');
+    getline(iss, city_code_, '-');
+    getline(iss, local_number_);
+
+    if (country_code_.empty() || city_code_.empty() || local_number_.empty()) {
         throw invalid_argument("Bad argument: " + international_number);
     }
 }
