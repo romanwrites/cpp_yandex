@@ -38,3 +38,6 @@ add_executable(11_Test_Rational
 
 add_executable(12_Test_IsPalindrom
         12_Test_IsPalindrom.cpp)
+
+add_executable(13_Sum_reverse_sort
+        13_Sum_reverse_sort.cpp)
