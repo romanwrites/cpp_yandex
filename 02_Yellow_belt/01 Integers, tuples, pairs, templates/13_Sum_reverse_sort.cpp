@@ -1,8 +1,7 @@
-#include <string>
 #include <vector>
 #include <iostream>
 #include <algorithm>
-//#include "sum_reverse_sort.h"
+#include "sum_reverse_sort.h"
 
 using namespace std;
 

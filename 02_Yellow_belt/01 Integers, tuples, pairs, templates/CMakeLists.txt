@@ -41,3 +41,6 @@ add_executable(12_Test_IsPalindrom
 
 add_executable(13_Sum_reverse_sort
         13_Sum_reverse_sort.cpp)
+
+add_executable(14_Decomposition2
+        14_Decomposition2.cpp)
