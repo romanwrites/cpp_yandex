@@ -8,8 +8,8 @@ using namespace std;
 
 PhoneNumber::PhoneNumber(const string &international_number) {
     istringstream iss(international_number);
-
     char c;
+
     iss >> c;
     if (c != '+') {
         throw invalid_argument("No plus in front: " + international_number);
