@@ -43,4 +43,10 @@ add_executable(13_Sum_reverse_sort
         13_Sum_reverse_sort.cpp)
 
 add_executable(14_Decomposition2
-        14_Decomposition2.cpp)
+        14_PhoneNumber_Decomposition.cpp)
+
+add_executable(16_Decomposition2
+        16_Decomposition2/main.cpp
+        16_Decomposition2/bus_manager.cpp
+        16_Decomposition2/query.cpp
+        16_Decomposition2/responses.cpp)
