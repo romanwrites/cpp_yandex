@@ -8,3 +8,6 @@ add_executable(17_VectorPart
 
 add_executable(18_Set_Parts
         18_Find_Greater_Elements.cpp)
+
+add_executable(19_Split
+        19_Split.cpp)
