@@ -11,3 +11,6 @@ add_executable(18_Set_Parts
 
 add_executable(19_Split
         19_Split.cpp)
+
+add_executable(20_RemoveDuplicates
+        20_RemoveDuplicates.cpp)
