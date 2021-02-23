@@ -14,3 +14,6 @@ add_executable(19_Split
 
 add_executable(20_RemoveDuplicates
         20_RemoveDuplicates.cpp)
+
+add_executable(21_Permutations
+        21_Permutations.cpp)
