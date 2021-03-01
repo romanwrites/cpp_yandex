@@ -17,3 +17,6 @@ add_executable(queens
 
 add_executable(UnitTestingFramework
         UnitTestingFramework.cpp)
+
+add_executable(algorithms
+        algorithms.cpp)

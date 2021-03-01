@@ -17,3 +17,6 @@ add_executable(20_RemoveDuplicates
 
 add_executable(21_Permutations
         21_Permutations.cpp)
+
+add_executable(22_PrintStats
+        22_PrintStats.cpp)
