@@ -20,3 +20,9 @@ add_executable(21_Permutations
 
 add_executable(22_PrintStats
         22_PrintStats.cpp)
+
+add_executable(23_MergeSort1
+        23_MergeSort1.cpp)
+
+add_executable(23_MergeSort2
+        23_MergeSort2.cpp)
