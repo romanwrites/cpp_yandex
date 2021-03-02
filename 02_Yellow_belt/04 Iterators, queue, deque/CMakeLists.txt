@@ -26,3 +26,6 @@ add_executable(23_MergeSort1
 
 add_executable(23_MergeSort2
         23_MergeSort2.cpp)
+
+add_executable(24_FindNearestElement
+        24_FindNearestElement.cpp)

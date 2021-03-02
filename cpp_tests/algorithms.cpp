@@ -20,7 +20,22 @@ bool f(int i) {
   return i > 9;
 }
 
+template <typename RandomIt>
+pair<RandomIt, RandomIt> FindSegment(
+    RandomIt range_begin, RandomIt range_end, int left, int right) {
+  return {lower_bound(range_begin, range_end, left),
+          upper_bound(range_begin, range_end, right)};
+}
+
 int main() {
+  vector<int> ve{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
+  auto its = FindSegment(ve.begin(), ve.end(), 9, 10);
+  cout << *its.first << " " << *its.second << endl;
+  cout << *next(its.first) << " " << *next(its.second) << endl;
+
+
+
+
   vector<string> langs = {
       "Python", "C++", "C", "Java", "C#", "Ruby", "JavaScript"
   };
@@ -74,6 +89,16 @@ int main() {
 //  remove_copy_if(begin(s), end(s), back_inserter(v), f);
 //
 //  PrintRange(begin(v), end(v));
+
+
+  set<string> s = { "one","some string","two" };
+  auto range = s.equal_range("some string");
+  cout << (range.first == range.second) << endl;
+  cout << *range.first << " " << *range.second << endl;
+
+  cout << endl;
+
+
 
   return 0;
 
