@@ -11,3 +11,6 @@ add_executable(29_Notifications.cpp
 
 add_executable(30_Figures.cpp
         30_Figures.cpp)
+
+add_executable(31_Refactor
+        31_Refactor.cpp)
