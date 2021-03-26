@@ -32,3 +32,15 @@ add_executable(24_FindNearestElement
 
 add_executable(25_Names4
         25_Names4.cpp)
+
+add_executable(26_FindStartsWithChar.cpp
+        26_FindStartsWithChar.cpp)
+
+add_executable(26_FindStartsWithString
+        26_FindStartsWithString.cpp)
+
+add_executable(27_Expression1
+        27_Expression_1.cpp)
+
+add_executable(27_Expression2
+        27_Expression_2.cpp)
