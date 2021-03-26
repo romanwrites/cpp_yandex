@@ -5,3 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(28_Inheritance
         28_Inheritance.cpp)
+
+add_executable(29_Notifications.cpp
+        29_Notifications.cpp)
