@@ -117,6 +117,10 @@ coming soon...
 * [Rational_throw](01_White_belt/04%20Streams%2C%20overloads%2C%20exceptions%2C%20classes/11_Rational_throw.cpp)
 * [Rational_calc](01_White_belt/04%20Streams%2C%20overloads%2C%20exceptions%2C%20classes/12_Rational_calc.cpp)
 * [TimeServer](01_White_belt/04%20Streams%2C%20overloads%2C%20exceptions%2C%20classes/13_TimeServer.cpp)
+
+### Final task
+* [Simple database](01_White_belt/05%20Final%20task/FinalTask.cpp)
+
 </details>
 
 <details>
