@@ -10,11 +10,9 @@ constexpr auto POLICEMAN = "Policeman";
 
 // Use coplien form
 class Person {
- private:
-  string status;
-
  protected:
   string name;
+  string status;
 
  public:
   Person(string const &name, string const &status = "Developer") : name(name), status(status) {}
@@ -26,6 +24,9 @@ class Person {
   virtual ~Person() = default;
 
   Person &operator=(Person const &p) {
+    if (this == &p) {
+      return *this;
+    }
     this->status = p.status;
     this->name = p.name;
     return *this;
@@ -55,7 +56,7 @@ class Student : public Person {
   Student(string const &name, string const &favouriteSong) : Person(name, STUDENT), favourite_song(favouriteSong) {}
 
   void Learn() const {
-    cout << STUDENT << ": " << name << " learns" << endl;
+    cout << status << ": " << name << " learns" << endl;
   }
 
   void Walk(const string &destination) const override {
@@ -64,7 +65,7 @@ class Student : public Person {
   }
 
   void SingSong() const {
-    cout << STUDENT << ": " << name << " sings a song: " << favourite_song << endl;
+    cout << status << ": " << name << " sings a song: " << favourite_song << endl;
   }
 
 };
@@ -77,7 +78,7 @@ class Teacher : public Person {
   Teacher(string const &name, string const &subject) : Person(name, TEACHER), subject(subject) {}
 
   void Teach() const {
-    cout << TEACHER << ": " << name << " teaches: " << subject << endl;
+    cout << status << ": " << name << " teaches: " << subject << endl;
   }
 
 };
@@ -88,7 +89,7 @@ class Policeman : public Person {
 
  public:
   void Check(Person const &p) const {
-    cout << POLICEMAN << ": " << name << " checks " << p.getStatus() << ". " << p.getStatus() << "'s name is: "
+    cout << status << ": " << name << " checks " << p.getStatus() << ". " << p.getStatus() << "'s name is: "
          << p.getName() << endl;
   }
 };
